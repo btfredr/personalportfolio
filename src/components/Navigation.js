@@ -32,11 +32,11 @@ const Navigation = () => {
   return (
     <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img src={logo} alt="Logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
-          <span className="nav-toggle"></span>
+          <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -68,7 +68,7 @@ const Navigation = () => {
               Projects
             </Nav.Link>
           </Nav>
-          <span className="nav-text">
+          <span className="navbar-text">
             <div className="social-icon">
               <a href="#">
                 <img src={navIcon1} alt="" />
@@ -80,7 +80,7 @@ const Navigation = () => {
                 <img src={navIcon3} alt="" />
               </a>
             </div>
-            <button onClick={() => console.log("connect")}>
+            <button className="vvd" onClick={() => console.log("connect")}>
               <span>Let's connect</span>
             </button>
           </span>

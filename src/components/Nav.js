@@ -21,8 +21,12 @@ const Nav = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const onUpdateActiveLink = (value) => {
+    setActiveLink(value);
+  };
+
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
       <Container>
         <Navbar.Brand href="#home">Fredrik Fordelsen</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -30,9 +34,31 @@ const Nav = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#skills">Skills</Nav.Link>
-            <Nav.Link href="#projects">Projects</Nav.Link>
+            <Nav.Link
+              href="#home"
+              className={activeLink === "home" ? "active nav-link" : "nav-link"}
+              onClick={() => onUpdateActiveLink("home")}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              href="#skills"
+              className={
+                activeLink === "skills" ? "active nav-link" : "nav-link"
+              }
+              onClick={() => onUpdateActiveLink("skills")}
+            >
+              Skills
+            </Nav.Link>
+            <Nav.Link
+              href="#projects"
+              className={
+                activeLink === "projects" ? "active nav-link" : "nav-link"
+              }
+              onClick={() => onUpdateActiveLink("projects")}
+            >
+              Projects
+            </Nav.Link>
           </Nav>
           <span className="nav-text">
             <div className="social-icon">

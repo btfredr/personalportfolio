@@ -2,8 +2,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useState, useEffect } from "react";
+import logo from "../assets/img/logo.svg";
+import navIcon1 from "../assets/img/nav-icon1.svg";
+import navIcon2 from "../assets/img/nav-icon2.svg";
+import navIcon3 from "../assets/img/nav-icon3.svg";
 
-const Nav = () => {
+const Navigation = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
@@ -28,7 +32,9 @@ const Nav = () => {
   return (
     <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
       <Container>
-        <Navbar.Brand href="#home">Fredrik Fordelsen</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <img src={logo} alt="Logo" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="nav-toggle"></span>
         </Navbar.Toggle>
@@ -36,7 +42,9 @@ const Nav = () => {
           <Nav className="me-auto">
             <Nav.Link
               href="#home"
-              className={activeLink === "home" ? "active nav-link" : "nav-link"}
+              className={
+                activeLink === "home" ? "active navbar-link" : "navbar-link"
+              }
               onClick={() => onUpdateActiveLink("home")}
             >
               Home
@@ -44,7 +52,7 @@ const Nav = () => {
             <Nav.Link
               href="#skills"
               className={
-                activeLink === "skills" ? "active nav-link" : "nav-link"
+                activeLink === "skills" ? "active navbar-link" : "navbar-link"
               }
               onClick={() => onUpdateActiveLink("skills")}
             >
@@ -53,7 +61,7 @@ const Nav = () => {
             <Nav.Link
               href="#projects"
               className={
-                activeLink === "projects" ? "active nav-link" : "nav-link"
+                activeLink === "projects" ? "active navbar-link" : "navbar-link"
               }
               onClick={() => onUpdateActiveLink("projects")}
             >
@@ -63,10 +71,13 @@ const Nav = () => {
           <span className="nav-text">
             <div className="social-icon">
               <a href="#">
-                <img src="" alt="" />
+                <img src={navIcon1} alt="" />
               </a>
               <a href="#">
-                <img src="" alt="" />
+                <img src={navIcon2} alt="" />
+              </a>
+              <a href="#">
+                <img src={navIcon3} alt="" />
               </a>
             </div>
             <button onClick={() => console.log("connect")}>
@@ -79,4 +90,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navigation;

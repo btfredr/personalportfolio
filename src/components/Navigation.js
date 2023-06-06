@@ -30,7 +30,7 @@ const Navigation = () => {
   };
 
   return (
-    <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
+    <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
       <Container>
         <Navbar.Brand href="/">
           <img src={logo} alt="Logo" />
@@ -39,7 +39,7 @@ const Navigation = () => {
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
             <Nav.Link
               href="#home"
               className={
@@ -80,8 +80,9 @@ const Navigation = () => {
                 <img src={navIcon3} alt="" />
               </a>
             </div>
-            <button className="vvd" onClick={() => console.log("connect")}>
-              <span>Let's connect</span>
+
+            <button className="vvd">
+              <span>Let’s Connect</span>
             </button>
           </span>
         </Navbar.Collapse>

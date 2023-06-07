@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const toRotate = ["Frontend Developer", "Web Designer", "UI/UX Designer"];
+  const toRotate = ["Frontend Developer", "Web Designer"];
   const [text, setText] = useState("");
   const period = 2000;
   const [delta, setDelta] = useState(300 - Math.random() * 100);
@@ -50,7 +50,7 @@ const Banner = () => {
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <h1>
-              {`Hi, I'm Fredrik.`} <span className="wrap">{text}</span>
+              Hi, I'm Fredrik. <span className="wrap">{text}</span>
             </h1>
             <span className="tagline">Welcome to my portfolio.</span>
             <p>

@@ -42,6 +42,9 @@ const Skills = () => {
               <Carousel
                 responsive={responsive}
                 infinite={true}
+                swipeable={true}
+                draggable={true}
+                removeArrowOnDeviceType={["tablet", "mobile"]}
                 className="owl-carousel owl-theme skill-slider"
               >
                 <div className="item">

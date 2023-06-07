@@ -1,11 +1,9 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
-import { ProjectCard } from "./ProjectCard";
+import ProjectCard from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import "animate.css";
-import TrackVisibility from "react-on-screen";
 
 const Projects = () => {
   const projects = [
@@ -55,7 +53,11 @@ const Projects = () => {
               incidunt?
             </p>
             <Tab.Container id="projects-tabs" defaultActiveKey="first">
-              <Nav variant="pills" defaultActiveKey="/home">
+              <Nav
+                variant="pills"
+                className="nav-pills mb-5 justify-content-center align-items-center"
+                id="pills-tab"
+              >
                 <Nav.Item>
                   <Nav.Link eventKey="first">Tab 1</Nav.Link>
                 </Nav.Item>
@@ -70,7 +72,7 @@ const Projects = () => {
                 <Tab.Pane eventKey="fist">
                   <Row>
                     {projects.map((project, index) => {
-                      return <p>{project.title}</p>;
+                      return <ProjectCard key={index} {...project} />;
                     })}
                   </Row>
                 </Tab.Pane>
@@ -91,6 +93,11 @@ const Projects = () => {
           </Col>
         </Row>
       </Container>
+      <img
+        src={colorSharp2}
+        alt="background image"
+        className="background-image-right"
+      />
     </section>
   );
 };

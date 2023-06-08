@@ -22,6 +22,29 @@ const Contact = () => {
     });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setButtonText("Sending...");
+    let response = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(formDetails),
+    });
+    setButtonText("Send");
+    let result = await response.json();
+    setFormDetails(formInitialDetails);
+    if (result.code == 200) {
+      setStatus({ succes: true, message: "Message sent successfully" });
+    } else {
+      setStatus({
+        succes: false,
+        message: "Something went wrong, please try again later.",
+      });
+    }
+  };
+
   return (
     <section className="contact" id="connect">
       <Container>
@@ -31,7 +54,7 @@ const Contact = () => {
           </Col>
           <Col md={6}>
             <h2>Get In Touch</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
               <Row>
                 <Col sm={6} className="px-1">
                   <input
@@ -53,7 +76,7 @@ const Contact = () => {
                   <input
                     type="email"
                     value={formDetails.email}
-                    placeholder="email"
+                    placeholder="Email"
                     onChange={(e) => onFormUpdate("email", e.target.value)}
                   />
                 </Col>
@@ -65,7 +88,7 @@ const Contact = () => {
                     onChange={(e) => onFormUpdate("phone", e.target.value)}
                   />
                 </Col>
-                <Col sm={6} className="px-1">
+                <Col sm={12} className="px-1">
                   <textarea
                     row="6"
                     value={formDetails.message}

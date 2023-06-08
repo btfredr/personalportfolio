@@ -32,9 +32,6 @@ const Navigation = () => {
   return (
     <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
       <Container>
-        <Navbar.Brand href="/">
-          <img src={logo} alt="Logo" />
-        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
@@ -80,10 +77,6 @@ const Navigation = () => {
                 <img src={navIcon3} alt="" />
               </a>
             </div>
-
-            <button className="vvd">
-              <span>Let’s Connect</span>
-            </button>
           </span>
         </Navbar.Collapse>
       </Container>

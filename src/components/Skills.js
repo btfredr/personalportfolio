@@ -1,9 +1,11 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Container, Row, Col } from "react-bootstrap";
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import html from "../assets/img/html.png";
+import css from "../assets/img/CSS3.png";
+import js from "../assets/img/js.png";
+import react from "../assets/img/React.png";
+import tw from "../assets/img/tailwind.png";
 import colorSharp from "../assets/img/color-sharp.png";
 
 const Skills = () => {
@@ -42,26 +44,31 @@ const Skills = () => {
               <Carousel
                 responsive={responsive}
                 infinite={true}
-                swipeable={true}
-                draggable={true}
-                removeArrowOnDeviceType={["tablet", "mobile"]}
                 className="owl-carousel owl-theme skill-slider"
               >
                 <div className="item">
-                  <img src={meter1} alt="Image" />
-                  <h5>Web Development</h5>
+                  <img src={html} alt="Image" />
+                  <h5>HTML</h5>
                 </div>
                 <div className="item">
-                  <img src={meter2} alt="Image" />
-                  <h5>Brand Identity</h5>
+                  <img src={css} alt="Image" />
+                  <h5>CSS</h5>
                 </div>
                 <div className="item">
-                  <img src={meter3} alt="Image" />
-                  <h5>Logo Design</h5>
+                  <img src={js} alt="Image" />
+                  <h5>JavaScript</h5>
                 </div>
                 <div className="item">
-                  <img src={meter1} alt="Image" />
-                  <h5>Web Development</h5>
+                  <img src={react} alt="Image" />
+                  <h5>React</h5>
+                </div>
+                <div className="item">
+                  <img src={tw} alt="Image" />
+                  <h5>TailwindCSS</h5>
+                </div>
+                <div className="item">
+                  <img src={react} alt="Image" />
+                  <h5>React</h5>
                 </div>
               </Carousel>
             </div>

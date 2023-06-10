@@ -6,6 +6,9 @@ import css from "../assets/img/CSS3.png";
 import js from "../assets/img/js.png";
 import react from "../assets/img/React.png";
 import tw from "../assets/img/tailwind.png";
+import sass from "../assets/img/sass.svg";
+import bs from "../assets/img/bs.svg";
+import fb from "../assets/img/firebase.svg";
 import colorSharp from "../assets/img/color-sharp.png";
 
 const Skills = () => {
@@ -37,9 +40,9 @@ const Skills = () => {
             <div className="skill-bx wow zoomIn">
               <h2>Skills</h2>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.<br></br> Lorem Ipsum has been the industry's standard
-                dummy text.
+                I mainly focus on React, but I have a lot of other experience
+                too.
+                <br></br> Slide through to see the different technologies:
               </p>
               <Carousel
                 responsive={responsive}
@@ -67,8 +70,8 @@ const Skills = () => {
                   <h5>TailwindCSS</h5>
                 </div>
                 <div className="item">
-                  <img src={react} alt="Image" />
-                  <h5>React</h5>
+                  <img src={bs} alt="Image" />
+                  <h5>Bootstrap</h5>
                 </div>
               </Carousel>
             </div>

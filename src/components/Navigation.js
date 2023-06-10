@@ -66,14 +66,14 @@ const Navigation = () => {
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="#">
+              <a
+                href="https://www.linkedin.com/in/fredrik-fordelsen-6a1281203/"
+                target="_blank"
+              >
                 <img src={navIcon1} alt="" />
               </a>
-              <a href="#">
+              <a href="https://www.github.com/btfredr" target="_blank">
                 <img src={navIcon2} alt="" />
-              </a>
-              <a href="#">
-                <img src={navIcon3} alt="" />
               </a>
             </div>
           </span>

@@ -6,9 +6,9 @@ import css from "../assets/img/CSS3.png";
 import js from "../assets/img/js.png";
 import react from "../assets/img/React.png";
 import tw from "../assets/img/tailwind.png";
-import sass from "../assets/img/sass.svg";
+import w from "../assets/img/w.png";
 import bs from "../assets/img/bs.svg";
-import fb from "../assets/img/firebase.svg";
+import redux from "../assets/img/redux.svg";
 import colorSharp from "../assets/img/color-sharp.png";
 
 const Skills = () => {
@@ -72,6 +72,14 @@ const Skills = () => {
                 <div className="item">
                   <img src={bs} alt="Image" />
                   <h5>Bootstrap</h5>
+                </div>
+                <div className="item">
+                  <img src={redux} alt="Image" />
+                  <h5>Redux</h5>
+                </div>
+                <div className="item">
+                  <img src={w} alt="Image" />
+                  <h5>Webflow</h5>
                 </div>
               </Carousel>
             </div>

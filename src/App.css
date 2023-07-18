@@ -25,6 +25,11 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
 }
 
 body {
@@ -34,6 +39,7 @@ body {
   background-color: #121212 !important;
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -46,7 +52,7 @@ p, a, li, button, ul {
   margin: 0;
   padding: 0;
   line-height: normal;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 a:hover {
@@ -443,6 +449,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: 0.5s ease-in-out;
   opacity: 0;
   width: 100%;
+  color: white;
 }
 .proj-imgbx:hover .proj-txtx {
   top: 50%;
@@ -469,20 +476,80 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
+.projectLink {
+  text-decoration: none;
+}
+
 
 /************ Footer Css ************/
 .footer {
-  padding: 1em;
-  background-image: url('./assets/img/footer-bg.png');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #101522;
 }
 
-.footer p {
-  font-weight: 400;
-  font-size: 14px;
-  color: #B8B8B8;
-  letter-spacing: 0.5px;
-  margin-top: 20px;
+.footer__wrapper {
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer__socialMedia {
+  max-width: 900px;
+  width: 100%;
+}
+
+.footer__socialMediaWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+}
+
+@media screen and (max-width: 820px) {
+  .footer__socialMediaWrap {
+    flex-direction: column;
+  }
+}
+
+.footer__logo {
+  color: #fff;
+  justify-self: start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  flex-direction: column;
+}
+
+.footer__logoH1 {
+  letter-spacing: 4px;
+}
+
+.footer__rights {
+  color: #fff;
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+.footer__socialIcons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 240px;
+}
+
+.footer__socialIconLink {
+  color: #fff;
+  font-size: 24px;
 }

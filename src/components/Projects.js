@@ -11,34 +11,10 @@ import TrackVisibility from "react-on-screen";
 const Projects = () => {
   const projects = [
     {
-      title: "Breaking Bad Character Database",
-      description: "Development and APIs",
-      imgUrl: projImg1,
-    },
-    {
-      title: "LinkedIn Clone",
-      description: "Site development and backend implementation",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Netflix Clone",
-      description: "Fully functional clone with user implementation",
-      imgUrl: projImg3,
-    },
-    {
       title: "Whensday",
       description: "Musical artist portfolio site",
       imgUrl: projImg4,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      projectLink: "https://whensday.fredrikfordelsen.com",
     },
   ];
 
@@ -49,50 +25,17 @@ const Projects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__fadeIn" : ""
-                  }
-                >
+                <div>
                   <h2>Projects</h2>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
-                  </p>
+                  <p>Feel free to check out some of my previous projects!</p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                    <Tab.Content
-                      id="slideInUp"
-                      className={
-                        isVisible ? "animate__animated animate__slideInUp" : ""
-                      }
-                    >
+                    <Tab.Content>
                       <Tab.Pane eventKey="first">
                         <Row>
                           {projects.map((project, index) => {
                             return <ProjectCard key={index} {...project} />;
                           })}
                         </Row>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="section">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="third">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>

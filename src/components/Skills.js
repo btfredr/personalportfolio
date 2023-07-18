@@ -1,6 +1,5 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { Container, Row, Col } from "react-bootstrap";
 import html from "../assets/img/html.png";
 import css from "../assets/img/CSS3.png";
 import js from "../assets/img/js.png";
@@ -50,35 +49,35 @@ const Skills = () => {
                 className="owl-carousel owl-theme skill-slider"
               >
                 <div className="item">
-                  <img src={html} alt="Image" />
+                  <img src={html} alt="" />
                   <h5>HTML</h5>
                 </div>
                 <div className="item">
-                  <img src={css} alt="Image" />
+                  <img src={css} alt="" />
                   <h5>CSS</h5>
                 </div>
                 <div className="item">
-                  <img src={js} alt="Image" />
+                  <img src={js} alt="" />
                   <h5>JavaScript</h5>
                 </div>
                 <div className="item">
-                  <img src={react} alt="Image" />
+                  <img src={react} alt="" />
                   <h5>React</h5>
                 </div>
                 <div className="item">
-                  <img src={tw} alt="Image" />
+                  <img src={tw} alt="" />
                   <h5>TailwindCSS</h5>
                 </div>
                 <div className="item">
-                  <img src={bs} alt="Image" />
+                  <img src={bs} alt="" />
                   <h5>Bootstrap</h5>
                 </div>
                 <div className="item">
-                  <img src={redux} alt="Image" />
+                  <img src={redux} alt="" />
                   <h5>Redux</h5>
                 </div>
                 <div className="item">
-                  <img src={w} alt="Image" />
+                  <img src={w} alt="" />
                   <h5>Webflow</h5>
                 </div>
               </Carousel>
@@ -86,7 +85,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-      <img className="background-image-left" src={colorSharp} alt="Image" />
+      <img className="background-image-left" src={colorSharp} alt="" />
     </section>
   );
 };

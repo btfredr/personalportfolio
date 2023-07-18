@@ -1,29 +1,90 @@
-import { Container, Row, Col } from "react-bootstrap";
-import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon2 from "../assets/img/github.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
+import {
+  FaInstagram,
+  FaSoundcloud,
+  FaSpotify,
+  FaTwitter,
+} from "react-icons/fa";
+import { SiApplemusic, SiTidal } from "react-icons/si";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className="footer">
-      <Container>
-        <Row className="align-items-center">
-          <Col size={12} lg={12} sm={6} className="text-center text-sm-end">
-            <div className="social-icon">
+      <div className="footer__wrapper">
+        <section className="footer__socialMedia">
+          <div className="footer__socialMediaWrap">
+            <a href="/" className="footer__logo">
+              <p className="footer__logoH1">Fredrik Fordelsen</p>
+              <small className="footer__rights">
+                &copy; {new Date().getFullYear()} All Rights Reserved.
+              </small>
+            </a>
+
+            <div className="footer__socialIcons">
               <a
-                href="https://www.linkedin.com/in/fredrik-fordelsen-6a1281203/"
+                href="//www.instagram.com/whensdayod"
                 target="_blank"
+                className="footer__socialIconLink"
+                rel="noreferrer"
+                aria-label="Instagram"
               >
-                <img src={navIcon1} alt="Icon" />
+                <FaInstagram />
               </a>
-              <a href="https://www.github.com/btfredr" target="_blank">
-                <img src={navIcon2} alt="Icon" />
+
+              <a
+                href="//www.twitter.com/whensdayod"
+                target="_blank"
+                className="footer__socialIconLink"
+                rel="noreferrer"
+                aria-label="Twitter"
+              >
+                <FaTwitter />
+              </a>
+
+              <a
+                href="https://open.spotify.com/artist/5kGJj49tILjz1N5FHt77fm"
+                target="_blank"
+                className="footer__socialIconLink"
+                rel="noreferrer"
+                aria-label="Spotify"
+              >
+                <FaSpotify />
+              </a>
+
+              <a
+                href="https://music.apple.com/us/artist/whensday/677854964"
+                target="_blank"
+                className="footer__socialIconLink"
+                rel="noreferrer"
+                aria-label="Apple Music"
+              >
+                <SiApplemusic />
+              </a>
+
+              <a
+                href="https://tidal.com/browse/artist/6467463"
+                target="_blank"
+                className="footer__socialIconLink"
+                rel="noreferrer"
+                aria-label="Apple Music"
+              >
+                <SiTidal />
+              </a>
+
+              <a
+                href="https://soundcloud.com/whensdayod"
+                target="_blank"
+                className="footer__socialIconLink"
+                rel="noreferrer"
+                aria-label="SoundCloud"
+              >
+                <FaSoundcloud />
               </a>
             </div>
-            <p>&copy; 2023 Fredrik Fordelsen | All Rights Reserved</p>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </section>
+      </div>
     </footer>
   );
 };
+
+export default Footer;

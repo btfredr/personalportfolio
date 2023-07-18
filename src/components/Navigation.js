@@ -1,85 +1,141 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import { useState, useEffect } from "react";
-import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon2 from "../assets/img/github.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
+import styled from "styled-components";
+import { FaBars } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { IconContext } from "react-icons/lib";
 
-const Navigation = () => {
-  const [activeLink, setActiveLink] = useState("home");
-  const [scrolled, setScrolled] = useState(false);
+const Navbar = styled.nav`
+  background: ${({ scrollNav }) => (scrollNav ? "#010606" : "transparent")};
+  height: 80px;
+  margin-top: -80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+  @media screen and (max-width: 960px) {
+    transition: 0.8s all ease;
+  }
+`;
 
-    window.addEventListener("scroll", onScroll);
+const NavbarContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  padding: 0 24px;
+  max-width: 1200px;
+`;
 
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+const NavLogo = styled.a`
+  color: #fff;
+  justify-self: flex-start;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+`;
 
-  const onUpdateActiveLink = (value) => {
-    setActiveLink(value);
+const MobileIcon = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #fff;
+  }
+`;
+
+const NavMenu = styled.ul`
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  margin-right: -22px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const NavItem = styled.li`
+  height: 80px;
+`;
+
+const NavLinks = styled.a`
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    color: #7b0d1e;
+    transition: 0.2s ease-in-out;
+  }
+`;
+
+const Navigation = ({ toggle }) => {
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
+
   return (
-    <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-      <Container>
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
-          <span className="navbar-toggler-icon"></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link
-              href="#home"
-              className={
-                activeLink === "home" ? "active navbar-link" : "navbar-link"
-              }
-              onClick={() => onUpdateActiveLink("home")}
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              href="#skills"
-              className={
-                activeLink === "skills" ? "active navbar-link" : "navbar-link"
-              }
-              onClick={() => onUpdateActiveLink("skills")}
-            >
-              Skills
-            </Nav.Link>
-            <Nav.Link
-              href="#projects"
-              className={
-                activeLink === "projects" ? "active navbar-link" : "navbar-link"
-              }
-              onClick={() => onUpdateActiveLink("projects")}
-            >
-              Projects
-            </Nav.Link>
-          </Nav>
-          <span className="navbar-text">
-            <div className="social-icon">
-              <a
-                href="https://www.linkedin.com/in/fredrik-fordelsen-6a1281203/"
-                target="_blank"
-              >
-                <img src={navIcon1} alt="" />
-              </a>
-              <a href="https://www.github.com/btfredr" target="_blank">
-                <img src={navIcon2} alt="" />
-              </a>
-            </div>
-          </span>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <>
+      <IconContext.Provider value={{ color: "#fff" }}>
+        <Navbar scrollNav={scrollNav}>
+          <NavbarContainer>
+            <NavLogo href="/">Fredrik Fordelsen</NavLogo>
+            <MobileIcon onClick={toggle}>
+              <FaBars />
+            </MobileIcon>
+            <NavMenu>
+              <NavItem>
+                <NavLinks href="/" activeClass="active">
+                  Home
+                </NavLinks>
+              </NavItem>
+
+              <NavItem>
+                <NavLinks href="#skills" activeClass="active">
+                  Skills
+                </NavLinks>
+              </NavItem>
+
+              <NavItem>
+                <NavLinks href="#projects" activeClass="active">
+                  Projects
+                </NavLinks>
+              </NavItem>
+            </NavMenu>
+          </NavbarContainer>
+        </Navbar>
+      </IconContext.Provider>
+    </>
   );
 };
 
